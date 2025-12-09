@@ -1,6 +1,35 @@
 #include <iostream>
-
+#include<cmath>
 using namespace std;
+#define db double
+
+double deg2rad(double deg){
+    return deg * M_PI / 180.0;
+}
+
+double rad2deg(double rad){
+    return rad * 180.0 / M_PI;
+}
+
+double findXComponent(db l1, db l2, db a1, db a2){
+    return l1*cos(a1) + l2*cos(a2);
+}
+
+double findYComponent(db l1, db l2, db a1, db a2){
+    return l1*sin(a1) + l2*sin(a2);
+}
+
+double pythagoras(db x, db y){
+    return sqrt(pow(x, 2) + pow(y, 2));
+}
+
+void showResult(db len, db dir){
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+    cout << "Length of the resultant vector = " << len << endl;
+    cout << "Direction of the resultant vector (deg) = " << dir << endl;
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+}
+
 
 int main(){
     double l1,l2,a1,a2,xcomp,ycomp,result_vec_length,result_vec_direction;
